@@ -7,4 +7,4 @@ Create your first Rails up (companion to the intro rails chapter in the ESaaS te
 3. Check that the default server runs
 4. Add a '/movies' route
 5. Create a migration for a movies table that will have title, rating, description, and release_date
-6 ..
+6. ...
