@@ -1,6 +1,6 @@
 # Hello Rails!
 
-Create your first Rails up (companion to the intro rails chapter in the ESaaS textbook)
+Create your first Rails app (companion to the intro rails chapter in the ESaaS textbook)
 
 1. Create a new rails app with no tests
 2. Update the Gemfile to include the haml gem and the byebug gem
