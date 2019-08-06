@@ -4,13 +4,13 @@
 Start the app with `rails server -p $PORT -b $IP`.
 Once the server has started, Cloud9 will show a small popup box saying
 something like 
-``Your code is running at
-`https://`_workspace_-_username_.`c9users.io`''.  We will
+"Your code is running at
+`https://`_workspace_-_username_.`c9users.io`".  We will
 refer to this as the app's _root-URI_.
 Recall from Chapter ref{chap:arch} that a URI
 such as this one that specifies only a hostname (and possibly a port)
 will fetch the app's home page.  For a brand-new Rails app without any
-code, this page is the  ``Welcome to Rails'' splash page you see.  
+code, this page is the  "Welcome to Rails" splash page you see.  
 (If developing locally, just say `rails server`, and the root-URI
 will be `http://localhost:3000`.)
 
@@ -59,7 +59,7 @@ table are the result of the line `resources :movies`, as we'll soon
 see.  (As with many Rails methods, `resources 'movies'` would also
 work, but a symbol usually indicates one of a fixed set of choices
 rather than an arbitrary string.)  The root route `'/'`,
-RottenPotatoes' ``home page,'' will take us to the main Movie listings
+RottenPotatoes' "home page," will take us to the main Movie listings
 page by a mechanism we'll soon see called a URL redirection.
 
 (If you want more practice with how the `routes.rb` contents get
@@ -87,7 +87,7 @@ message and additional information are captured in the log file
 
 Having covered the first two steps in the list---setting up the app
 skeleton and creating some initial routes---we can move on to setting up
-the database that will store the models, the ``M'' of MVC.
+the database that will store the models, the "M" of MVC.
 
 ## Summary
 
