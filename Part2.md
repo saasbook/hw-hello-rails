@@ -62,36 +62,30 @@ a name, and since this migration will create the movies table, we choose
 the name CreateMovies.  
 Run the command
 `rails generate migration create_movies`,
-
 and if successful,
 you will find a new file under `db/migrate` whose name begins
 with the creation time and date and ends with the name
-you supplied, for example, `20111201180638\-_create\-_movies.rb`.
+you supplied, for example, `20111201180638_create_movies.rb`.
 (This naming scheme lets Rails apply migrations in the order they were
 created, since the file names will sort in date order.)  Edit this file
 to make it look like thge code below.  As you can
 see, migrations illustrate an idiomatic use of blocks: the
 `ActiveRecord::Migration#create_table`
-
  method takes a block of 1
 argument and yields to that block
-
- an object representing the table being
+an object representing the table being
 created.  The methods `string`, `datetime`, and so on are provided
 by this table object, and calling them results 
 in creating columns in the newly-created database table; for example,
 `t.string 'title'` creates a column  named `title` that can hold a
 string, which for most databases means up to 255 characters.
+The documentation for the `ActiveRecord::Migration` class (from
+which all migrations inherit) is part of the
+[Rails documentation](http://api.rubyonrails.org/), and gives
+more details and other migration options.
 
-<script src="https://gist.github.com/armandofox/cd0bc6647751700aff9c166b88a7a871.js"></script>
-  A migration that creates a new Movies table, specifying the desired
-  fields and their types.  The documentation for the `ActiveRecord::Migration` class (from
-  which all migrations inherit) is part of the
-  [Rails documentation](http://api.rubyonrails.org/), and gives
-  more details and other migration options.}
-
-
-Save the file and type `rake db:migrate` to actually apply the
+Paste [this code](https://gist.github.com/armandofox/cd0bc6647751700aff9c166b88a7a871) into the file, save it, 
+and type `rake db:migrate` to actually apply the
 migration and create this table.  Note that this housekeeping task
 also stores the migration number itself in the database, and
 by default it only applies migrations that haven't already
@@ -122,13 +116,8 @@ does nothing the second time.)
 
 As a last step before continuing, you should \x{seed} the database with some
 movies to make the rest of the chapter more interesting.
-Copy the code below
+Copy [this code](https://gist.github.com/armandofox/056aae02801cf42a0199)
 into `db/seeds.rb` and run `rake db:seed` to run it.
-
-<script
-src="https://gist.github.com/armandofox/056aae02801cf42a0199.js"></script>
-
-
 
 <details>
 <summary>
