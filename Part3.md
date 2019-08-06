@@ -7,7 +7,7 @@ something like
 "Your code is running at
 `https://`_workspace_-_username_.`c9users.io`".  We will
 refer to this as the app's _root-URI_.
-Recall from Chapter ref{chap:arch} that a URI
+A URI
 such as this one that specifies only a hostname (and possibly a port)
 will fetch the app's home page.  For a brand-new Rails app without any
 code, this page is the  "Welcome to Rails" splash page you see.  
