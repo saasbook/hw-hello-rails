@@ -44,6 +44,8 @@ controller action
 5. Deploy the app to the public cloud, in this case using Heroku's
 Platform-as-a-Service (PaaS) facility
 
+## Homework Parts
+
 1. [Part 1: Set up to create a new app](Part1.md)
 
 2. [Part 2: Create the database and initial migration](Part2.md)
