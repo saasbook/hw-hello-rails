@@ -1,5 +1,6 @@
 # Part 3: Create CRUD routes, actions, and views for Movies
 
+**NOTE: The below instructions make some specific references to running this assignment on Cloud9.  This needs to be updated/modified if you are using a different IDE or running on your own computer.**
 
 Start the app with `rails server -p $PORT -b $IP`.
 Once the server has started, Cloud9 will show a small popup box saying
