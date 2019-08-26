@@ -70,21 +70,20 @@ ESaaS.)
 
 
 Using convention over configuration, 
-coc
 Rails will expect
 this controller's actions to be defined in the class
 `MoviesController`,
 and if that class isn't defined at application
 start time, Rails will try to load it from the file
-`app/{`controllers/{}movies_controller.rb}.  Sure enough,
-if you now reload the page  _root-URI_/`/movies` in your
+`app/controllers/movies_controller.rb`.  Sure enough,
+if you now reload the page  _root-URI_`/movies` in your
 browser, you should see a different error: `uninitialized constant
-  MoviesController`.  This is good news: a Ruby class name is just a
-constant that refers to the class object, so Rails is essentially
-complaining that it can't find the `MoviesController` class,
-indicating that our route is working correctly!  As before, this error
+  MoviesController`.  This is good news: Rails is essentially
+complaining that it can't find the `MoviesController` class, but the
+fact that it's even looking for that class tells us
+that our route is working correctly!  As before, this error
 message and additional information are captured in the log file
-`log/{`development.log}. 
+`log/development.log`. 
 
 Having covered the first two steps in the list---setting up the app
 skeleton and creating some initial routes---we can move on to setting up
@@ -96,7 +95,7 @@ You've used the following commands to set up a new Rails app:
 
   0. `rails new` sets up the new app; the `rails` command also
     has subcommands to run 
-    the app locally with WEBrick (`rails server`) and other management tasks.
+    the app locally (`rails server`) and other management tasks.
   0. Rails and the other gems your app depends on (we added the Haml
     templating)
     are listed in the app's `Gemfile`, which Bundler uses to automate
