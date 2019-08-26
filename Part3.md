@@ -124,9 +124,9 @@ between development and production mode.
 <summary>
   Recall the generic Rails welcome page you saw when you first created
   the app.
-  In the `development.log` file, 
-  what is happening when the line `Started GET
-    "assets/rails.png"` is printed?  (Hint: recall the steps needed to
+	In the <code>development.log</code> file, 
+  what is happening when the line <code>Started GET
+	"assets/rails.png"</code> is printed?  (Hint: recall the steps needed to
   render a page containing embedded assets.)
 
 </summary>
