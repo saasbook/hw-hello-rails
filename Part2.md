@@ -43,7 +43,7 @@ Changing the schema using migrations is a four-step process:
 1. Create a migration describing what changes to make.  
   As with
   `rails new`, Rails
-  provides a migration \x{generator} that gives you the boilerplate code,
+  provides a migration _generator_ that gives you the boilerplate code,
   plus various helper methods to describe the migration.
 1. Apply the migration to the development database.  Rails defines a
   `rake` task for this.
@@ -114,18 +114,18 @@ does nothing the second time.)
     on the deployment environment.
 
 
-As a last step before continuing, you should \x{seed} the database with some
+As a last step before continuing, you should _seed_ the database with some
 movies to make the rest of the chapter more interesting.
 Copy [this code](https://gist.github.com/armandofox/056aae02801cf42a0199)
 into `db/seeds.rb` and run `rake db:seed` to run it.
 
 <details>
 <summary>
-  Do Rails models acquire the methods `where` and `find` via (a)
-  inheritance or (b) mix-in?  (Hint: check the `movie.rb` file.)
+ Do Rails models acquire the methods <code>where</code> and <code>find</code> via (a)
+ inheritance or (b) mix-in?  (Hint: check the <code>movie.rb</code> file.)
 
 </summary>
 <blockquote>
 </blockquote>
-  (a) they inherit from `ActiveRecord::Base`.
+  (a) they inherit from <code>ActiveRecord::Base</code>.
 </details>
