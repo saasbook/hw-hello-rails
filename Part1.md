@@ -1,23 +1,48 @@
 # Part 1: Set up the new app
 
-Begin by logging into your development environment's home directory
-and creating a new, empty
-Rails app with the command `rails new rottenpotatoes -T`.
+## Verify you have Ruby and Rails installed
 
-<blockquote>
-`-T` tells Rails not to create a `test` directory, which would
-normally contain tests writtng using
-Ruby's `Test::Unit` framework.  In a future assignment we will instead
+Open a terminal window in your development environment.
+
+`ruby -v` tells you the installed Ruby version; if it fails, you 
+need to install Ruby--we recommend using [rvm (Ruby Version Manager)](https://rvm.io), 
+which allows you to maintain multiple installed versions of Ruby and 
+gem sets, useful if you're working on multiple apps that use different Ruby versions.
+You should have Ruby 2.6 or later.
+
+`rails -v` tells you the installed version of the Rails framework. 
+If none is installed, say `gem install rails --version=4.2.10`, which is
+the Rails version that this assignment was tested with.  (It may work with 
+Rails 5 or 6 but is not guaranteed to.)
+
+You will also need the `bundler` gem.  If `bundle -v` fails, `gem install bundler`
+to install it.
+
+## Create a new Rails app
+
+Now that you have Ruby and Rails installed, create a new, empty
+Rails app with the command `rails new rottenpotatoes --skip-test-unit --skip-turbolinks`.
+
+The options tell Rails to omit three aspects of the new app:
+
+* Rather than Ruby's `Test::Unit` framework, in a future assignment we will instead
 create
 tests using the RSpec framework.
+
+* Turbolinks is a piece of trickery that uses AJAX behind-the-scenes to speed
+up page loads in your app.  However, it causes so many problems with JavaScript
+event bindings and scoping that we strongly recommend against using it.  A well
+tuned Rails app should not benefit much from the type of speedup Turbolinks provides.
+
 If you're interested, `rails new --help` shows more options available
 when creating a new app.
-</blockquote>
+
 
 
 If all goes well, you'll see several messages about files being created,
-ending with `run bundle install`.  You can now `cd` to the
-newly-created `rottenpotatoes` directory, called the \x{app root}
+ending with `run bundle install`, which may take a couple of minutes to complete.  
+You can now `cd` to the
+newly-created `rottenpotatoes` directory, called the **app root**
 directory for your new app.  From now on, unless we say otherwise, all
 file names will be relative to the app root.  Before going further,
 spend a few minutes examining the contents of the new app directory
@@ -36,4 +61,26 @@ default `Gemfile` for you.  For example,
 you can see that `sqlite3` is listed, because the default
 Rails development environment expects to use the SQLite3 database.
 
-## Check your work: TBD
+## Work around the SQLite3 gem bug in v1.4
+
+Rails uses the SQLite3 database as the default for development and testing.  
+Unfortunately, versions of the SQLite3 gem starting with 1.4.0 introduced
+a bug that make it no longer work properly with Rails.  To work around this,
+we must force Rails to use an earlier version, namely any version beginning
+with 1.3.  Locate the line in the `Gemfile` that specifies the `sqlite3` gem
+and change it to read as follows:
+
+`gem 'sqlite3', '~> 1.3.0'`
+
+Then run `bundle update` and verify that its output contains "Using sqlite3 1.3.x" 
+where x is any minor version.
+
+
+## Check your work
+
+To make sure everything works, change into the app's root directory and
+start the app locally by typing `rails server`, which starts the WEBrick app server
+listening on port 3000.  Then in a web browser
+visit `localhost:3000` and you should see the generic Ruby on Rails landing page, 
+which is actually being served by your app.  Later we will define our own routes
+so that the "top level" page does not default to this banner.
