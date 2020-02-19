@@ -84,3 +84,6 @@ listening on port 3000.  Then in a web browser
 visit `localhost:3000` and you should see the generic Ruby on Rails landing page, 
 which is actually being served by your app.  Later we will define our own routes
 so that the "top level" page does not default to this banner.
+
+
+2. [Part 2: Create the database and initial migration](Part2.md)
