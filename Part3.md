@@ -1,27 +1,18 @@
 # Part 3: Create CRUD routes, actions, and views for Movies
 
-**NOTE: The below instructions make some specific references to running this assignment on Cloud9.  This needs to be updated/modified if you are using a different IDE or running on your own computer.**
+Start the app with `rails server`.
+Once the server has started, GitPod will show a small popup box asking if a port should be exposed, then saying that service is running. Click on `Open in Browser`. Alternatively, click on the ports at the bottom of the GitPod IDE to access the ports tab.
 
-Start the app with `rails server -p $PORT -b $IP`.
-Once the server has started, Cloud9 will show a small popup box saying
-something like 
-"Your code is running at
-`https://`_workspace_-_username_.`c9users.io`".  We will
-refer to this as the app's _root-URI_.
-A URI
+The URL that will open in the browser will be something like `https://_workspace_id.ws-eu01.gitpod.io/`. We will
+refer to this as the app's _root-URI_. A URI
 such as this one that specifies only a hostname (and possibly a port)
 will fetch the app's home page.  For a brand-new Rails app without any
 code, this page is the  "Welcome to Rails" splash page you see.  
-(If developing locally, just say `rails server`, and the root-URI
-will be `http://localhost:3000`.)
-
 
 If you now try the URI _root-URI_/`/movies`
 (that is, 
-`https://`_workspace_--_username_.`c9users.io/movies`
-if developing on Cloud9, or
-`http://localhost:3000/movies`
-if developing on your own computer),
+`https://`_workspace_--id.`gitpod.io/movies`
+if developing on GitPod, you
 should get a Routing Error from Rails.  Indeed, you should verify that
 _anything_ you add after the hostname part of the URI results in this error, 
 because we haven't specified any routes
@@ -135,3 +126,6 @@ between development and production mode.
     The browser is requesting the embedded image of the Rails logo for the
     welcome page.
 </details>
+
+### Next Step
+[Part 5: Deploy to the cloud, including production database](Part5.md)
