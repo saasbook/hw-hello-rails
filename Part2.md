@@ -92,6 +92,15 @@ by default it only applies migrations that haven't already
 been applied.  (Type `rake db:migrate` again to verify that it
 does nothing the second time.)
 
+### Adding a model
+Now lets create a Movie class that will represent the data being stored in the database. We'll use the `ActiveRecord` pattern for mapping objects in code to database tables, so this class will inherit from the rails class `ActiveRecord::Base`.
+- Create a new file `app/models/movie.rb`
+- Add these two lines to the file:
+```
+class Movie < ActiveRecord::Base
+end
+```
+
 ## Summary
 
   1.  Rails defines three environments---development, production and
@@ -119,13 +128,6 @@ movies to make the rest of the chapter more interesting.
 Copy [this code](https://gist.github.com/armandofox/056aae02801cf42a0199)
 into `db/seeds.rb` and run `rake db:seed` to run it.
 
-<details>
-<summary>
- Do Rails models acquire the methods <code>where</code> and <code>find</code> via (a)
- inheritance or (b) mix-in?  (Hint: check the <code>movie.rb</code> file.)
+### Next Step
 
-</summary>
-<blockquote>
-</blockquote>
-  (a) they inherit from <code>ActiveRecord::Base</code>.
-</details>
+[Part 3: Create CRUD routes, actions, and views for Movies](Part3.md)
