@@ -5,4 +5,4 @@ ports:
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: setup.sh
+  - init: /workspace/hw-hello-rails/setup.sh
