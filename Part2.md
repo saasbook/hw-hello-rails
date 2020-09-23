@@ -119,6 +119,15 @@ movies to make the rest of the chapter more interesting.
 Copy [this code](https://gist.github.com/armandofox/056aae02801cf42a0199)
 into `db/seeds.rb` and run `rake db:seed` to run it.
 
+Right now `rake db:seed` fails with the following error:
+```
+NameError: uninitialized constant Movie
+```
+This means there is a missing class named Movie that is being used in `path-to-rottenpotatoes/db/seeds.rb:20`.
+We need to add a Model class in `path-to-rottenpotatoes/app/models/movie.rb`.
+Run command `rails g model Movie --skip-migration --skip-test`. Use git to check which files got added/edited.
+
+
 <details>
 <summary>
  Do Rails models acquire the methods <code>where</code> and <code>find</code> via (a)

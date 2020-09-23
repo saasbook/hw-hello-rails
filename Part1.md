@@ -61,6 +61,37 @@ default `Gemfile` for you.  For example,
 you can see that `sqlite3` is listed, because the default
 Rails development environment expects to use the SQLite3 database.
 
+## Issues with bundler versions
+You may get the following error message:
+```
+Bundler could not find compatible versions for gem "bundler":
+  In Gemfile:
+    rails (= 4.2.10) was resolved to 4.2.10, which depends on
+      bundler (< 2.0, >= 1.3.0)
+
+  Current Bundler version:
+    bundler (2.1.4)
+```
+
+To resolve it, we recommend running the following commands:
+```
+gem uninstall bundler   # To remove all existing bundler installations eg. 2.1.4
+gem install bundler -v '1.17.3'  # To install compartible bundler version
+```
+
+You may have a default bundler version that will not allow you to uninstall with the following error:
+```
+Gem bundler-2.1.4 cannot be uninstalled because it is a default gem
+```
+
+Run the following command to find and delete files that match the format `bundler*`:
+```
+cd $(ruby -e "puts Gem::Specification.default_specifications_dir") && rm -rf bundler*
+```
+
+If you had issues with bundler earlier you may want to run `bundle install` now.
+
+
 ## Work around the SQLite3 gem bug in v1.4
 
 Rails uses the SQLite3 database as the default for development and testing.  
@@ -84,3 +115,9 @@ listening on port 3000.  Then in a web browser
 visit `localhost:3000` and you should see the generic Ruby on Rails landing page, 
 which is actually being served by your app.  Later we will define our own routes
 so that the "top level" page does not default to this banner.
+
+
+## Commit your work
+At this stage, everything is working and you should initialize a git repo in your app's folder and commit your app.
+Here is an [example `.gitignore` file for Rails on Github](https://github.com/github/gitignore/blob/master/Rails.gitignore).
+You should frequently commit your code from now on.
