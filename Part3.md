@@ -6,6 +6,8 @@ Change this configuration option to match the following (if it exists) or add a 
 config.hosts = nil
 ```
 
+![](development-config-host-nil.webp)
+
 Open Terminal using `Tools > Terminal` and run the following command:
 ```shell script
 rails server -b 0.0.0.0
@@ -13,6 +15,8 @@ rails server -b 0.0.0.0
 
 To view your movies review site, use the Preview button that says `Project Index` in the top tool bar.
 Click the drop down and select `Box URL`.
+
+![](box-url.webp)
 
 For subsequent previews, you will not need to press the drop down – your button should now read "Box URL".
 
@@ -90,3 +94,14 @@ The log files in the log directory collect error information when something goes
 You may have noticed that after changing routes.rb, you didn’t have to stop and restart the app in order for the changes to take effect. 
 In development mode, Rails reloads all of the app’s classes on every new request, so that your changes take effect immediately. 
 In production this would cause serious performance problems, so Rails provides ways to change various app behaviors between development and production mode.
+
+<details>
+    <summary>
+        Recall the generic Rails welcome page you saw when you first created the app. In the `development.log` file,
+        what is happening when the line Started GET “assets/rails.png” is printed? 
+        (Hint: recall the steps needed to render a page containing embedded assets.)
+    </summary>
+    <blockquote>
+        The browser is requesting the embedded image of the Rails logo for the welcome page.
+    </blockquote>
+</details>
