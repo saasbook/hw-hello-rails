@@ -1,4 +1,4 @@
-# Part 5: Deploy to the cloud, including the production database
+# Part 4: Deploy to the cloud, including the production database
 
 In the Sinatra Hangperson assignment, you already learned how to
 deploy a Sinatra app to Heroku.
