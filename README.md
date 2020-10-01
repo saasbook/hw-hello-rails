@@ -52,7 +52,5 @@ Platform-as-a-Service (PaaS) facility
 
 3. [Part 3: Create CRUD routes, actions, and views for Movies](Part3.md)
 
-4. [Part 4: Run the app and use the debugger](Part4.md)
-
-5. [Part 5: Deploy to the cloud, including production database](Part5.md)
+4. [Part 4: Deploy to the cloud, including production database](Part4.md)
 
