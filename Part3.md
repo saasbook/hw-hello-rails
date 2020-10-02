@@ -1,6 +1,6 @@
 # Part 3: Create CRUD routes, actions, and views for Movies
 
-If you are developing in Codio, we need to add a line of code to `config > environments > development.rb`.
+If you are developing in Codio, we need to add a line of code to `config/environments/development.rb`.
 Change this configuration option to match the following (if it exists) or add a new line:
  ```
 config.hosts = nil
@@ -79,7 +79,8 @@ To make the page more appealing, you need to incorporate CSS. You will see this 
 
 
 Now that the app is working, we would like to deploy it to production.
-Summary
+
+## Summary
 
 You’ve used the following commands to set up a new Rails app:
 
@@ -88,12 +89,27 @@ You’ve used the following commands to set up a new Rails app:
 2. Rails and the other gems your app depends on (we added the Haml templating) are listed in the app’s `Gemfile`,
 which Bundler uses to automate the process of creating a consistent environment for your app whether in development or production mode.
 
-To add routes in `config/routes.rb`, the one-line `resources` method provided by the Rails routing system allowed us to set up
+3. You created a database by running an initial migration to create
+the first table, then adding seed data in `seeds.rb` to populate the
+first few entries.  (In a real production app, you might or might not
+need seed data; usually it's used for things like creating the initial
+Admin account so that someone can login.)
+
+4. To add routes in `config/routes.rb`, the one-line `resources` method provided by the Rails routing system allowed us to set up
 a group of related routes for `CRUD+Index` actions on a RESTful resource (REST = Representational State Transfer).
 The log files in the log directory collect error information when something goes wrong.
 You may have noticed that after changing routes.rb, you didn’t have to stop and restart the app in order for the changes to take effect. 
 In development mode, Rails reloads all of the app’s classes on every new request, so that your changes take effect immediately. 
-In production this would cause serious performance problems, so Rails provides ways to change various app behaviors between development and production mode.
+In production this would cause serious performance problems, so Rails
+provides ways to change various app behaviors between development and
+production mode.
+
+5. Then, we took advantage of Rails's scaffolding to automatically
+generate (extremely simple) code for a controller and views that
+actually implement the CRUD+I RESTful actions.
+
+In the final part, we'll deploy the app to a production-quality PaaS (Platform
+as a Service) in the cloud, namely Heroku.
 
 <details>
     <summary>
@@ -105,3 +121,7 @@ In production this would cause serious performance problems, so Rails provides w
         The browser is requesting the embedded image of the Rails logo for the welcome page.
     </blockquote>
 </details>
+
+<div align="center">
+[<< Previous: Part 2](/Part2.md) &bull; [Next: Part 4 >>](/Part4.md)
+</div>

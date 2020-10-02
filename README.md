@@ -1,5 +1,7 @@
 # Hello Rails!
 
+[View this on GitHub](https://github.com/saasbook/hw-hello-rails)
+
 In previous assignments, you created and deployed a simple Hangperson
 game using the Ruby-based Sinatra framework, and in the subsequent
 assignment, you explored the differences between the Rails and Sinatra

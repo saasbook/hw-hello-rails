@@ -23,7 +23,6 @@ We could use the
 GUI tool to create it manually, but how would we later
 create the database and table in our production database when we deploy?  Typing the
 same commands a second time isn't DRY,
-
 and the exact commands might be
 hard to remember.
 Further, if the production database is something other than SQLite3
@@ -31,7 +30,6 @@ Further, if the production database is something other than SQLite3
 And in the future, if we add more tables or make other changes to the
 database, we'll face the same problem.
 
- 
 A better alternative is a _migration_---a portable script for
 changing the database schema (layout of tables and columns) in a consistent and
 repeatable way,
@@ -92,6 +90,45 @@ by default it only applies migrations that haven't already
 been applied.  (Type `rake db:migrate` again to verify that it
 does nothing the second time.)
 
+## Create the initial model, and seed the database
+
+Although the database now contains a `movies` table, Rails has no idea
+that it exists.
+Since Movies are a model, the next step is therefore to create the
+ActiveRecord model that uses this table.  That is as simple as
+creating a file `app/models/movie.rb` with these two lines:
+
+```ruby
+class Movie < ActiveRecord::Base
+end
+```
+
+Recall that convention over configuration says that Rails expects the
+model named `Thing` to be defined in `app/models/thing.rb` and to
+correspond to a database table `things`.  (Yes, Rails does the right
+thing pluralizing irregular nouns, but to keep things simple, we
+recommend not using them!  Do you really need a table named `sheep`?)
+
+You can now verify that `Movie` is defined as a model by running
+`rails console`, which loads up your entire app into a REPL
+(read-eval-print loop) environment, and saying `Movie.new`.  You will
+get a brand new instance of `Movie` whose attribute values are all
+`nil`, and importantly, whose database primary key `id` is `nil`
+because it hasn't been saved to the database yet.  You can confirm the
+latter by saying `Movie.first`, which tries to fetch the very first
+movie in the database; you should get back `nil`.
+
+As a last step before continuing, you can now _seed_ the database with some
+movies to make the rest of the chapter more interesting.
+Copy [this code](https://gist.github.com/armandofox/056aae02801cf42a0199)
+into `db/seeds.rb` and once you have a sense of what it does, run
+`rake db:seed` to run it.  Now once again try `Movie.first` and verify
+that there are movies in the database.  In fact, using the
+[ActiveRecord Basics
+CHIPS](https://github.com/saasbook/hw-activerecord-intro) as
+inspiration, try a few simple queries on movies from the Rails console.
+
+
 ## Summary
 
   1.  Rails defines three environments---development, production and
@@ -114,19 +151,6 @@ does nothing the second time.)
     on the deployment environment.
 
 
-As a last step before continuing, you should _seed_ the database with some
-movies to make the rest of the chapter more interesting.
-Copy [this code](https://gist.github.com/armandofox/056aae02801cf42a0199)
-into `db/seeds.rb` and run `rake db:seed` to run it.
-
-Right now `rake db:seed` fails with the following error:
-```
-NameError: uninitialized constant Movie
-```
-This means there is a missing class named Movie that is being used in `path-to-rottenpotatoes/db/seeds.rb:20`.
-We need to add a Model class in `path-to-rottenpotatoes/app/models/movie.rb`.
-Run command `rails g model Movie --skip-migration --skip-test`. Use git to check which files got added/edited.
-
 
 <details>
 <summary>
@@ -138,3 +162,8 @@ Run command `rails g model Movie --skip-migration --skip-test`. Use git to check
 </blockquote>
   (a) they inherit from <code>ActiveRecord::Base</code>.
 </details>
+
+
+<div align="center">
+[<< Previous: Part 1](/Part1.md) &bull; [Next: Part 3 >>](/Part3.md)
+</div>
