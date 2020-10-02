@@ -123,5 +123,5 @@ as a Service) in the cloud, namely Heroku.
 </details>
 
 <div align="center">
-[<< Previous: Part 2](/Part2.md) &bull; [Next: Part 4 >>](/Part4.md)
+<b><a href="Part2.md">&larr; Previous: Part 2</a> &bull; <a href="Part2.md">Next: Part 4 &rarr;</a></b>
 </div>

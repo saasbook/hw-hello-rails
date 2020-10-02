@@ -58,3 +58,7 @@ Ruby gem?
 You must add a line to your `Gemfile` to add a gem and re-run `bundle install`.
 </blockquote>
 </details>
+
+<div align="center">
+<b><a href="Part3.md">&larr; Previous: Part 3</a></b>
+</div>

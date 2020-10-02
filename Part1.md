@@ -124,5 +124,5 @@ You should frequently commit your code from now on.
 
 
 <div align="center">
-[Next: Part 2 >>](/Part2.md)
+<b><a href="Part2.md">Next: Part 2 &rarr;</a></b>
 </div>

@@ -165,5 +165,5 @@ inspiration, try a few simple queries on movies from the Rails console.
 
 
 <div align="center">
-[<< Previous: Part 1](/Part1.md) &bull; [Next: Part 3 >>](/Part3.md)
+<b><a href="Part1.md">&larr; Previous: Part 1</a> &bull; <a href="Part3.md">Next: Part 3 &rarr;</a></b>
 </div>
