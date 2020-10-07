@@ -43,9 +43,8 @@ installed as a dependency of `rails`.)
 Now that you have Ruby and Rails installed, create a new, empty
 Rails app with the command: 
 ```sh
-rails new rottenpotatoes --skip-test-unit
+rails new rottenpotatoes --skip-test-unit --skip-turbolinks --skip-spring
 ```
---skip-turbolinks --skip-spring`.
 
 The options tell Rails to omit three aspects of the new app:
 
