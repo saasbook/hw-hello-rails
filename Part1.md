@@ -25,7 +25,7 @@ of Bundler that doesn't work with this assignment, and the wrong
 version of Rails for using `rails new` to generate an app skeleton.  We're working on
 updating Codio but in the meantime, do these steps manually:
 
-```
+```sh
 sudo gem uninstall --version '>=0' --all bundler
 sudo gem uninstall --version '> 4' --all rails
 sudo gem uninstall --version '> 4' --all railties
@@ -41,7 +41,10 @@ installed as a dependency of `rails`.)
 ## Create a new Rails app
 
 Now that you have Ruby and Rails installed, create a new, empty
-Rails app with the command `rails new rottenpotatoes --skip-test-unit
+Rails app with the command: 
+```sh
+rails new rottenpotatoes --skip-test-unit
+```
 --skip-turbolinks --skip-spring`.
 
 The options tell Rails to omit three aspects of the new app:
