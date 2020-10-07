@@ -33,7 +33,7 @@ sudo gem install --no-document --version '1.17.3' bundler
 sudo gem install --no-document --version '4.2.10' rails
 ```
 
-(`--no-ri` skips the lengthy step of installing local documentation
+(`--no-document` skips the lengthy step of installing local documentation
 for the Gems; it's much faster to use the online documentation.  Also,
 you don't have to explicitly reinstall `railties` because it will be
 installed as a dependency of `rails`.)
