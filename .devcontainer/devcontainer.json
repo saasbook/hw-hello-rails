@@ -1,0 +1,27 @@
+{
+  // Dev container configuration for CHIP 4.8, used by GitHub Codespaces and
+  // the VS Code "Dev Containers" extension.
+  //
+  // Most chips share common/devcontainer/devcontainer.json, which builds a
+  // Dockerfile at the repo root. This chip keeps its own copy because its
+  // image lives at .devcontainer/Dockerfile instead -- see the comments there
+  // for why.
+  "name": "ESaaS CHIP 4.8",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-lsp",
+        "KoichiSasada.vscode-rdbg"
+      ]
+    }
+  },
+  // `rails server -b 0.0.0.0` serves here.
+  "forwardPorts": [3000],
+  // The repo has no Gemfile until you run `rails new`, which bundles for you.
+  // On later rebuilds the app is there, so pick its gems back up.
+  "postCreateCommand": "if [ -f Gemfile ]; then bundle install; fi"
+}
