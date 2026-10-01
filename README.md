@@ -2,6 +2,8 @@
 
 [View this assignment on GitHub](https://github.com/saasbook/hw-hello-rails)
 
+[Read the assignment instructions](instructions/README.md)
+
 ## Introduction
 
 In previous assignments, you created and deployed a simple Wordguesser game using the Ruby-based Sinatra framework, and in the subsequent assignment, you explored the differences between the Rails and Sinatra versions of that same app.
