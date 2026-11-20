@@ -111,7 +111,7 @@ OK, now ensure you're changed into the directory of the app you just created (`c
 
 ## Specify Ruby version
 
-It is a good practice to specify the Ruby version you are using in the `Gemfile`. Run `ruby -v` in the terminal to check the version you are using. In the `Gemfile`, add `ruby '<version>'` below `source 'https://rubygems.org'`. For example, on Codio or in the assignment's container you will see `ruby '3.3.8'`.
+It is a good practice to specify the Ruby version you are using in the `Gemfile`. Run `ruby -v` in the terminal to check the version you are using. In the `Gemfile`, add `ruby '<version>'` below `source 'https://rubygems.org'`. For example, on Codio or in the assignment's container you will see `ruby '3.3.13'`.
 
 ## Check your work
 

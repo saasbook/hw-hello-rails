@@ -16,7 +16,7 @@
 #
 # The image deliberately installs no gems: the starter repo has no Gemfile
 # until you run `rails new`, which writes one and bundles it for you.
-FROM ruby:3.3.8
+FROM ruby:3.3.13
 
 # Part 1 asks you to verify these exact versions. Rails is installed into the
 # image rather than via a Gemfile because the repo starts out empty -- you need
@@ -28,7 +28,7 @@ RUN gem install bundler -v 2.6.9 --no-document \
     && gem install rails -v 7.1.5 --no-document
 
 # Everything else the assignment needs -- git, a C toolchain for native gems,
-# and the SQLite and PostgreSQL client libraries -- is already in ruby:3.3.8.
+# and the SQLite and PostgreSQL client libraries -- is already in ruby:3.3.13.
 
 WORKDIR /app
 
